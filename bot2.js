@@ -85,4 +85,6 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-client.login(process.env.DISCORD_BOT_TOKEN);
+const discordBotToken = process.env.DISCORD_BOT_TOKEN;
+
+client.login(discordBotToken);
