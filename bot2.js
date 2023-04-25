@@ -71,18 +71,6 @@ client.on('messageCreate', async (message) => {
             '```\n' + `${message.content}` + '```';
         await sendLogMessage(logContent);
     }
-
-    // Check if message is sent in #words channel
-    if (channel.name === 'words') {
-        // Extract words from "word1", "word2", "word3" format
-        const wordsString = content.replace(/"/g, '').split(', '); // Replace double quotes (") with empty string ('') and split by commas
-
-        // Wrap each word with single quotes ('), replace double quotes (") with single quotes ('), and join with commas
-        const wrappedWords = wordsString.map(word => `'${word.replace(/"/g, "'")}'`).join(', ');
-
-        // Send the wrapped words as a reply back to the same channel
-        await channel.send(`Wrapped words: ${wrappedWords}`);
-    }
 });
 
 const discordBotToken = process.env.DISCORD_BOT_TOKEN;
