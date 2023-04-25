@@ -1,4 +1,5 @@
 const { Client, Intents, EmbedBuilder } = require('discord.js');
+require('dotenv').config();
 
 const client = new Client({
     intents: 3276799,
@@ -84,4 +85,4 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-client.login('');
+client.login(process.env.DISCORD_BOT_TOKEN);
